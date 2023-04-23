@@ -1,0 +1,10 @@
+.regular-button {
+    background-color: rgb(4, 4, 91);
+    color: white;
+    padding: 10px 30px;
+}
+
+.add-form {
+    width: 50%;
+    margin: 0 auto;
+}
