@@ -12,11 +12,11 @@
     margin-bottom: 15px;
     border: none;
     width: 30%;
-    border-bottom: 2px solid teal;
+    border-bottom: 2px solid mediumseagreen;
 }
 
 .submit-btn {
-    background-color: teal;
+    background-color: mediumseagreen;
     color: white;
     width: 30%;
     border: none;
@@ -25,4 +25,8 @@
     margin-top: 15px;
     font-size: 18px;
     font-weight: 600;
+}
+
+.google-login {
+    text-align: center;
 }

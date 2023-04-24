@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Spinner } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import '../Login/Login.css';
@@ -30,7 +30,7 @@ const Register = () => {
 
     return (
         <div>
-            <h1>Register</h1>
+            <h1 className='text-center'>Register</h1>
             {!isLoading && <form onSubmit={handleLoginSubmit} className='login-form' >
                 <input
                     type="text"
@@ -62,7 +62,7 @@ const Register = () => {
                     Already registered? Please Login
                 </Link>
             </form>}
-            {isLoading && <Spinner animation="border" variant="success" />}
+
             {user?.email && <Alert style={{ width: '30%', margin: '0 auto', fontSize: '18px' }} variant="success">
                 User created successfully
             </Alert>}

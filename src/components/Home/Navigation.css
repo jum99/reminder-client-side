@@ -1,12 +1,32 @@
-.nav {
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
     display: flex;
-
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navlink {
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
     text-decoration: none;
-    color: #000;
-    font-size: 20px;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.logout-btn {
+    width: 150px;
+    padding: 5px 0;
+    text-align: center;
+    margin: 10px 10px;
+    border-radius: 25px;
     font-weight: bold;
-    margin: 10px;
+    border: 2px solid #009688;
+    cursor: pointer;
 }

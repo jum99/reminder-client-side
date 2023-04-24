@@ -1,49 +1,54 @@
 import React from 'react';
 import './AddReminder.css';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
 
 
 const AddReminder = () => {
+
+    const { user } = useAuth();
+
 
     const { register, reset, handleSubmit } = useForm();
 
     const onSubmit = data => {
 
-        const orderData = {
+        const reminderData = {
             // ...currentUser,
             name: data.name,
             date: data.date,
             time: data.time,
             timeRange: data.timeRange,
+            email: user?.email,
             // orderTime: new Date()
         }
 
-        alert('Order completed');
+        alert('Reminder added');
         reset();
         // history.replace(from);
 
-        // const url = `addOrder`
-        console.log(orderData);
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(orderData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data) {
-        //             alert('Your order placed successfully');
-        //         }
-        //     })
+        const url = `http://localhost:5000/reminders`
+        console.log(reminderData);
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reminderData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Your reminder added successfully');
+                }
+            })
 
     };
 
     return (
         <div>
-            <div className="shadow add-form p-5 mt-5 mb-5">
-                <h2 className="mb-5 ">Add Reminder</h2>
+            <div className="shadow add-form p-4 mb-2">
+                <h2 className="mb-5 text-center">Add Reminder</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="row ">
                         <div className="col-md-12">
@@ -71,7 +76,7 @@ const AddReminder = () => {
 
 
                     </div>
-                    <button type="submit" className="btn regular-button">Submit</button>
+                    <button type="submit" className="btn btn-success">Submit</button>
                 </form>
             </div>
         </div>

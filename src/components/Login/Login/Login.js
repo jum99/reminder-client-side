@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Spinner } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
@@ -29,7 +29,7 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1 className='text-center'>Login</h1>
             {!isLoading && <form onSubmit={handleLoginSubmit} className='login-form' >
                 <input
                     type="email"
@@ -49,17 +49,17 @@ const Login = () => {
                     New user? Please Register
                 </Link>
             </form>}
-            <p>-------------------------------</p>
+            <div className='google-login'>
+                <p>-------------------------------</p>
 
-            <button onClick={handleGoogleSignIn} className='submit-btn'>Google Sign In</button>
-
-            {isLoading && <Spinner animation="border" variant="success" />}
-            {user?.email && <Alert style={{ width: '30%', margin: '0 auto', fontSize: '18px' }} variant="success">
-                User created successfully
-            </Alert>}
-            {authError && <Alert style={{ width: '30%', margin: '0 auto', fontSize: '18px' }} variant="danger">
-                {authError}
-            </Alert>}
+                <button onClick={handleGoogleSignIn} className='submit-btn'>Google Sign In</button>
+                {user?.email && <Alert style={{ width: '30%', margin: '0 auto', fontSize: '18px' }} variant="success">
+                    User created successfully
+                </Alert>}
+                {authError && <Alert style={{ width: '30%', margin: '0 auto', fontSize: '18px' }} variant="danger">
+                    {authError}
+                </Alert>}
+            </div>
         </div>
     );
 };
