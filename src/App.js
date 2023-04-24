@@ -8,6 +8,7 @@ import Navigation from './components/Home/Navigation';
 import RequireAuth from './components/Login/Login/RequireAuth';
 import AddReminder from './components/AddReminder/AddReminder';
 import UserReminders from './components/UserReminders/UserReminders';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
             </RequireAuth>
           }
           />
+
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </AuthProvider>

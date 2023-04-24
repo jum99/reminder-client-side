@@ -27,7 +27,7 @@ const AddReminder = () => {
         reset();
         // history.replace(from);
 
-        const url = `http://localhost:5000/reminders`
+        const url = `https://reminder-website-server-production.up.railway.app/reminders`
         console.log(reminderData);
         fetch(url, {
             method: 'POST',

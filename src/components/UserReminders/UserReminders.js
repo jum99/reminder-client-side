@@ -9,14 +9,14 @@ const UserReminders = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/userReminders?email=${user?.email}`)
+        fetch(`https://reminder-website-server-production.up.railway.app/userReminders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReminders(data));
     }, [])
 
     const deleteItem = id => {
         console.log("id", id);
-        fetch(`http://localhost:5000/cancelItem/${id}`, {
+        fetch(`https://reminder-website-server-production.up.railway.app/cancelItem/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
